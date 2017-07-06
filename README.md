@@ -1,5 +1,5 @@
 # delicious-theme
-## Baseado em: http://underscores.me/
+## Tema desenvolvido a partir de: http://underscores.me/
 ### Este template foi criado com base na arquitetura esqueleto gerada através do link acima.
 Arquiterura gerada que funciona como um esqueleto para montar um template wordpress:
 <ul>
