@@ -1,7 +1,7 @@
 # delicious-theme
 ## Baseado em: http://underscores.me/
-### Este template foi criado com base na arquiterura gerada através do link acima.
-Arquiterura gerada:
+### Este template foi criado com base na arquitetura esqueleto gerada através do link acima.
+Arquiterura gerada que funciona como um esqueleto para montar um template wordpress:
 <ul>
 <li>inc/</li>
 <li>js/</li>
@@ -27,3 +27,5 @@ Arquiterura gerada:
 <li>single.php</li>
 <li>style.css</li>
 </ul>
+
+
