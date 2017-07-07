@@ -4,7 +4,7 @@
  *
  * You can add an optional custom header image to header.php like so ...
  *
-	<?php the_header_image_tag(); ?>
+ *	<?php the_header_image_tag(); ?>
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
@@ -34,8 +34,38 @@ if ( ! function_exists( 'delicious_header_style' ) ) :
  *
  * @see delicious_custom_header_setup().
  */
+
+function delicious_logo_style(){
+	//logo desktop
+	$default_logo = get_template_directory_uri() .'/assets/images/logo.png';
+    $custom_logo_id = get_theme_mod( 'custom_logo', $default_logo );
+    $image_full = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+    //logo mobile
+    $default_logo_small = get_template_directory_uri() .'/assets/images/logo_small.png';
+    $custom_logo_small_id = get_theme_mod( 'custom_logo', $default_logo );
+    $image_small = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+    ?>
+    <style type="text/css">
+
+    	.site-branding{
+          	background-image: url('<?php if (!empty($image_full[0])) { echo $image_full[0] ; } else{ echo $default_logo; } ?>');
+        }
+    	@media (max-width: 600px){
+          .site-branding{
+          	background-image: url('<?php if (!empty($image_small[0])) { echo $image_small[0] ; } else{ echo $default_logo_small; } ?>');
+          }
+    	}
+
+    </style>
+    <?php
+}
+
 function delicious_header_style() {
+
 	$header_text_color = get_header_textcolor();
+	
 
 	/*
 	 * If no custom options for text are set, let's bail.
