@@ -37,7 +37,7 @@ if ( ! function_exists( 'delicious_header_style' ) ) :
 
 function delicious_logo_style(){
 	//logo desktop
-	$default_logo = get_template_directory_uri() .'/assets/images/logo.png';
+    $default_logo = get_template_directory_uri() .'/assets/images/logo.png';
     $custom_logo_id = get_theme_mod( 'custom_logo', $default_logo );
     $image_full = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 
