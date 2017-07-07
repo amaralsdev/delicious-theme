@@ -60,7 +60,48 @@ function delicious_customize_register( $wp_customize ) {
     ));
 
 
-        /*************** SOBRE **************/
+    $wp_customize->add_setting('titulo_destaque',array(
+        'default'     => 'Bem vindo ao nosso restaaurante',
+        )
+    );
+
+    $wp_customize->add_control('titulo_destaque',array(
+        'label'       => 'Título <h1>',
+        'description' => 'Digite um título para ficar em destaque',
+        'section'     => 'secao_header',
+        'settings'    => 'titulo_destaque',
+        )
+    );
+
+    $wp_customize->add_setting('subtitulo_destaque', array(
+        'default'     => '- Confira nosso cardápio -',
+        )
+    );
+
+    $wp_customize->add_control('subtitulo_destaque', array(
+        'label'      => 'Subtítulo <h2>',
+        'description'=> 'Subtítulo em destaque',
+        'section'    => 'secao_header',
+        'settings'   => 'subtitulo_destaque',
+        )
+    );
+
+    $wp_customize->add_setting('texto_destaque',array(
+        'default'    => 'TODOS OS NOSSOS PRATOS SÃO FEITOS COM MUITO AMOR E DEDICAÇÃO...',
+        )
+    );
+
+    $wp_customize->add_control('texto_destaque',array(
+        'label'      => 'Texto',
+        'description'=> 'Texto normal',
+        'section'    => 'secao_header',
+        'settings'   => 'texto_destaque',
+        'type'       => 'textarea',
+        )
+    );
+
+
+    /*************** SOBRE **************/
     $wp_customize->add_section( 'secao_sobre', array(
     'title' => esc_html__('Sobre', $text_domain),
     'priority' => 1,
@@ -413,15 +454,7 @@ function delicious_customize_register( $wp_customize ) {
         'settings' => 'endereco_contatos',
         )
     );
-
-
-
-
-
-
-
-
-    
+   
 
 }
 add_action( 'customize_register', 'delicious_customize_register' );
