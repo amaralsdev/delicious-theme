@@ -21,12 +21,15 @@ $bg_home = get_template_directory_uri() .'/assets/images/slide1_bg.jpg';
 }
 
 /*define o título*/
+$titulo_home = get_theme_mod('h1_destaque','Bem vindo ao nosso restaaurante');
 
 
 /*subtitulo*/
+$subtitulo_home = get_theme_mod('subtitulo_destaque','- Confira nosso cardápio -');
 
 
 /*descricao*/
+$texto_home = get_theme_mod('texto_destaque','TODOS OS NOSSOS PRATOS SÃO FEITOS COM MUITO AMOR E DEDICAÇÃO...');
 
  ?>
 
@@ -34,10 +37,10 @@ $bg_home = get_template_directory_uri() .'/assets/images/slide1_bg.jpg';
          <section id="home" style="background-image: url('<?php echo $bg_home ?>');">
          <div class="container">
             <div id="layer">
-         	<h1>Bem vindo ao nosso restaaurante</h1>
-         	<h2>- Confira nosso cardápio -</h2>
+         	<h1><?php echo $titulo_home ?></h1>
+         	<h2><?php echo $subtitulo_home ?></h2>
          	<span class="separator"></span>
-         	<p class="font-normal">TODOS OS NOSSOS PRATOS SÃO FEITOS COM MUITO AMOR E DEDICAÇÃO...</p>
+         	<p class="font-normal"><?php echo wpautop($texto_home) ?></p>
          	</div>
          	
          </div>
@@ -50,5 +53,3 @@ $bg_home = get_template_directory_uri() .'/assets/images/slide1_bg.jpg';
 
 		
 <?php
-
-//get_footer();
