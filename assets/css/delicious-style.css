@@ -4,6 +4,9 @@
     line-height: 1em;
 }
 
+ul.conteudo-cardapio li h3 {
+    color: #da1a1a;
+}
 
 .thumbnail-post img {
     margin: auto;
