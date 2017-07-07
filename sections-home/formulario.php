@@ -21,18 +21,31 @@
     }
      
     if (isset($_POST['enviar'])) {
-      if (!noempty($_POST['nome']) or !noempty($_POST['telefone']) or !is_email($_POST['email']) or !noempty($_POST['msg'])) {
+      if (!noempty($_POST['nome']) or !is_email($_POST['email']) or !noempty($_POST['msg'])) {
         $_SESSION['info'] = 'Preencha todos campos corretamente.';
 
          
       }
       
       else {
+        $nome = $_POST["nome"];
+        $telefone = $_POST["telefone"];
+         $email = $_POST["email"];
+         $messagem = $_POST['msg'];
+
         $headers = 'From: ' . $_POST['email'] . "\r\n" .
             'Reply-To: ' . $_POST['email']  . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
      
-        if(@mail(get_bloginfo('admin_email'), $_POST['telefone'], $_POST['msg'], $headers)) {
+     $email_subject = "Novo contato de: \n $nome";
+
+     $email_body = "Você recebeu uma nova mensagem de $nome.\n".
+                "Telefone: $telefone.\n".
+                "Mensagem:\n $messagem";
+
+        if(@mail(get_bloginfo('admin_email'), $_POST['nome'], $email_body, $headers)) {
+          
+
           $_SESSION['info'] = 'E-mail enviado com sucesso.';
           header('Location: http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']);
           exit;
@@ -68,7 +81,7 @@ window.location = '#contato';
 }
 
 </style>
-  <form method="post" action="#contato">
+  <form method="post" action="">
        
         <input type="text" class="left" id="nome" name="nome" placeholder="Seu nome" value="<?php echo h(@$_POST['nome']) ?>" id="nome" />
 
