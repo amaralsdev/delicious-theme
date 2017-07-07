@@ -9,9 +9,6 @@
  * @package Delicious
  */
 
-$default_logo = get_template_directory_uri() .'/assets/images/logo.png';
-$custom_logo_id = get_theme_mod( 'custom_logo', $default_logo );
-$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 
 
 ?><!doctype html>
@@ -37,7 +34,7 @@ $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 	<header id="masthead" class="site-header">
 	
 		<a href="<?php echo get_bloginfo('url')?>">
-		<div class="site-branding" style="background-image: url('<?php if (!empty($custom_logo_id)) { echo $image[0] ; } else{ echo $default_logo; } ?>');">
+		<div class="site-branding">
 			<!--<?php
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) : ?>
