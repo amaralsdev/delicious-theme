@@ -28,4 +28,11 @@ Arquiterura gerada que funciona como um esqueleto para montar um template wordpr
 <li>style.css</li>
 </ul>
 
+### Base de conhecimento: https://codex.wordpress.org/
+#### Custom Post Type Cardápio
+#### Formulário PHP sem plugin
+#### Slider Baseado em Bootstrap
+#### customizer.php
+#### CSS 
+#### HTML
 
